@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <div class="min-h-full">
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex items-center space-x-2 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="#fff" viewBox="0 0 24 24">
+                                <title>storefront-outline</title>
+                                <path
+                                    d="M5.06 3C4.63 3 4.22 3.14 3.84 3.42S3.24 4.06 3.14 4.5L2.11 8.91C1.86 10 2.06 10.95 2.72 11.77L3 12.05V19C3 19.5 3.2 20 3.61 20.39S4.5 21 5 21H19C19.5 21 20 20.8 20.39 20.39S21 19.5 21 19V12.05L21.28 11.77C21.94 10.95 22.14 10 21.89 8.91L20.86 4.5C20.73 4.06 20.5 3.7 20.13 3.42C19.77 3.14 19.38 3 18.94 3H5.06M18.89 4.97L19.97 9.38C20.06 9.81 19.97 10.2 19.69 10.55C19.44 10.86 19.13 11 18.75 11C18.44 11 18.17 10.9 17.95 10.66C17.73 10.43 17.61 10.16 17.58 9.84L16.97 5L18.89 4.97M5.06 5H7.03L6.42 9.84C6.3 10.63 5.91 11 5.25 11C4.84 11 4.53 10.86 4.31 10.55C4.03 10.2 3.94 9.81 4.03 9.38L5.06 5M9.05 5H11V9.7C11 10.05 10.89 10.35 10.64 10.62C10.39 10.88 10.08 11 9.7 11C9.36 11 9.07 10.88 8.84 10.59S8.5 10 8.5 9.66V9.5L9.05 5M13 5H14.95L15.5 9.5C15.58 9.92 15.5 10.27 15.21 10.57C14.95 10.87 14.61 11 14.2 11C13.89 11 13.61 10.88 13.36 10.62C13.11 10.35 13 10.05 13 9.7V5M7.45 12.05C8.08 12.67 8.86 13 9.8 13C10.64 13 11.38 12.67 12 12.05C12.69 12.67 13.45 13 14.3 13C15.17 13 15.92 12.67 16.55 12.05C17.11 12.67 17.86 13 18.8 13H19.03V19H5V13H5.25C6.16 13 6.89 12.67 7.45 12.05Z" />
+                            </svg>
+                            <h1 class="text-xl xl:text-xl xl:text-xl font-bold text-gray-100 tracking-wider">Admin Pannel
+                            </h1>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex justify-between items-baseline space-x-4">
+                                <a href="/admin/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex justify-between items-baseline space-x-1">
+                                <a href="/admin/createUser"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Create User</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6">
+                        
+                            <i class="far fa-user text-gray-400"></i>
+                           
+                            <a href="/admin/logout"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                                <i class="fas fa-sign-out-alt pr-1 text-white"></i>
+                                Logout</a>
+
+                           
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="md:hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                    
+                    <a href="/admin" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                        aria-current="page">Dashboard</a>
+                    <a href="/admin/create/user"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Create
+                        User</a>
+                </div>
+                <div class="border-t border-gray-700 pb-3 pt-4">
+                    <div class="flex justify-between items-center px-5">
+                      
+                        <a href="/logout"
+                            class="flex items-center space-x-2 rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-sign-out-alt pr-1"></i>
+                            Logout</a>
+                    </div>
+                    <div class="mt-3 space-y-1 px-2">
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="bg-white shadow">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+            </div>
+        </header>
+        <main>
+            <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                <!-- component -->
+                <section class="antialiased bg-gray-100 text-gray-600 h-screen px-4">
+                    <div class="flex flex-col justify-start pt-5 h-full">
+                        <!-- Table -->
+                        <div class="w-full  mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+                            <header class="px-5 py-4 border-b border-gray-100">
+                                <h2 class="font-semibold text-gray-800">Users List</h2>
+                            </header>
+                            <div class="p-3">
+                                <div class="overflow-x-auto">
+                                    <table class="table-auto xl:table-fixed w-full">
+                                        <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                                            <tr>
+                                                <th class="p-2 whitespace-nowrap w-56">
+                                                    <div class="font-semibold text-left">Name</div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-left">Email</div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap w-1/5">
+                                                    <div class="font-semibold text-left">Phone</div>
+                                                </th>
+                                             
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-left">Edit/Delete</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-sm divide-y divide-gray-100">
+
+
+                                            <!-- Custom TABLE DATA-->
+                                            {{range .user}}
+                                            <tr>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <h1><div class="text-left truncate">{{.Name}}</div></h1>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="font-medium text-gray-800">{{.Email}}</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-left">{{.Phone}}</div>
+                                                </td>
+                                          
+                                                <td class="p-2 whitespace-nowrap flex">
+                                                    <form action="/admin/update/" method="POST">
+                                                        <input type="hidden" name="email" value="{{.Email}}">
+                                                        
+                                                        <button
+                                                            class="bg-green-500 text-white active:bg-pink-600 font-bold uppercase text-xs p-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                            type="submit">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </button>
+                                                    </form>
+                                                    <form action="/admin/userDelete" method="POST">
+                                                        <input type="hidden" name="email" value="{{.Email}}">
+                                                        <button
+                                                            class="bg-red-500 text-white active:bg-pink-600 font-bold uppercase text-xs p-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                            type="submit">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            {{end}}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
