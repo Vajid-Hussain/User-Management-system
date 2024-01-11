@@ -19,5 +19,8 @@ func ConnectDatabase(cfg *config.Config) (*gorm.DB, error) {
 	}
 
 	db.AutoMigrate(&domain.Users{})
+
+	// Create a admin in postgress database using terminal with credential of name and password;
+	db.AutoMigrate(&domain.Admin{})
 	return db, nil
 }
