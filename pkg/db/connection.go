@@ -22,5 +22,24 @@ func ConnectDatabase(cfg *config.Config) (*gorm.DB, error) {
 
 	// Create a admin in postgress database using terminal with credential of name and password;
 	db.AutoMigrate(&domain.Admin{})
+
+	CheckAndCreateAdmin(db)
+
 	return db, nil
+}
+
+// Change name and password as your wish Before first run.
+func CheckAndCreateAdmin(DB *gorm.DB) {
+	var count int
+	var (
+		Name     = "Muhammad"
+		Password = "secret"
+	)
+
+	query := "SELECT COUNT(*) FROM admins"
+	DB.Raw(query).Row().Scan(&count)
+	if count <= 0 {
+		query = "INSERT INTO admins(name, password) VALUES(?, ?)"
+		DB.Exec(query, Name, Password).Row().Err()
+	}
 }
