@@ -12,3 +12,6 @@ run:
 
 wire:
 	cd pkg/di && wire
+
+mock:
+	mockgen -source=pkg/repository/interface/user.go -destination=pkg/mock/mockrepo/user_mock.go -package=mockrepo
