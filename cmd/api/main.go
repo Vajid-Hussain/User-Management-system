@@ -5,8 +5,6 @@ import (
 	config "sample/pkg/config"
 
 	"sample/pkg/di"
-
-	// "github.com/joho/godotenv"
 )
 
 func main() {
@@ -26,5 +24,4 @@ func main() {
 	} else {
 		server.Start()
 	}
-
 }
