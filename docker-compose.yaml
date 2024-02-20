@@ -1,0 +1,36 @@
+services:
+  user-management:
+    image: vajidhussain/user-management-system
+    build: ./
+    networks:
+      - user-management-networks
+    ports:
+      - 3000:8000
+    container_name: user-management-container
+    restart: on-failure
+    depends_on:
+      - user-management-database
+    
+  user-management-database:
+    image: postgres
+    container_name: user-management-db-container
+    networks:
+      - user-management-networks
+    ports:
+      - 5431:5432
+    volumes:
+      - user-management-volumes:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    hostname: postgresdb
+
+    
+networks:
+  user-management-networks:
+    driver: bridge
+
+volumes:
+  user-management-volumes:
+  
+
+
